@@ -19,5 +19,5 @@ class Member(models.Model):
 
 class SwipedAnimal(models.Model):
     animalCode = models.CharField(max_length=50, default="NULL")
-    memberUsername = models.CharField(max_length=20, default="cardy31")
+    memberUserId = models.IntegerField(default=1)
     owner = models.ForeignKey('auth.User', related_name='swipedanimal', default=1)

@@ -17,13 +17,13 @@ class SwipedAnimalSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = SwipedAnimal
-        fields = ('id', 'animalCode', 'memberUsername', 'owner')
+        fields = ('id', 'animalCode', 'memberUserId', 'owner')
 
 
 # Implements a special user class that has built-in login/out abilities
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     # Will be a list of all the foods a member has eaten
-    member = serializers.HyperlinkedRelatedField(many=True, view_name='memberinfo-detail', read_only=True)
+    member = serializers.HyperlinkedRelatedField(many=True, view_name='member-detail', read_only=True)
 
     class Meta:
         model = User
